@@ -1,0 +1,25 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# Visual Studio
+.vs/
+*.csproj
+*.sln
+*.user
+*.unityproj
+
+# System
+.DS_Store
+Thumbs.db
+
+# Rider / JetBrains
+.idea/
+
+# Unity cache
+[Bb]ee/
