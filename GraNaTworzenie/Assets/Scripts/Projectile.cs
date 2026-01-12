@@ -10,25 +10,20 @@ public class Projectile : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
 
-   private void Awake()
-{
-    anim = GetComponent<Animator>();
-    boxCollider = GetComponent<BoxCollider2D>();
-    
-    direction = 1f;
-}
-private void Update()
-{
-    if (hit) return;
-    
-    float movementSpeed = speed * Time.deltaTime * direction;
-    transform.Translate(movementSpeed, 0, 1);
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+    private void Update()
+    {
+        if (hit) return;
+        float movementSpeed = speed * Time.deltaTime * direction;
+        transform.Translate(movementSpeed, 0, 0);
 
-    Debug.Log($"Movement - Speed: {speed}, Direction: {direction}, Movement: {movementSpeed}");
-
-    lifetime += Time.deltaTime;
-    if (lifetime > 5) gameObject.SetActive(false);
-}
+        lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
